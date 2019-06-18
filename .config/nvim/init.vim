@@ -1,6 +1,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'vim-syntastic/syntastic'
-" Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 Plug 'https://gitlab.com/Lenovsky/nuake.git'
 Plug 'pandark/42header.vim'
 Plug 'ekalinin/Dockerfile.vim'
@@ -17,6 +19,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
 Plug 'edkolev/tmuxline.vim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
 "-------------------------------- MISC CONFIG ----------------------------------
@@ -214,9 +218,21 @@ let g:netrw_preview=1		" press p to Preview, then Ctrl-W z to close
 nnoremap <leader>l :Lex<cr>
 
 
+"-------------------------------- NERDTREE ----------------------------------------
+let g:NERDTreeHijackNetrw = 0
+let g:ranger_replace_netrw = 1
+nnoremap <leader>] :NERDTree<cr>
+
+
+"-------------------------------- RANGER ----------------------------------------
+let g:ranger_map_keys = 0
+nnoremap <leader>[ :Ranger<cr>
+
+
 "-------------------------------- LIGHTLINE-------------------------------------
 let g:lightline = {'colorscheme': 'darcula'}
 set noshowmode
+
 
 "-------------------------------- NVIM TERM ------------------------------------
 let g:term_buf = 0
