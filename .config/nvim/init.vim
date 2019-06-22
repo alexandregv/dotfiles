@@ -104,6 +104,7 @@ nnoremap <C-Left> :TmuxNavigateLeft<CR>
 "map <A-l> <Down>
 "map <A-;> <Right>
 noremap <A-o> o
+noremap ø o
 noremap o <Up>
 noremap k <Left>
 noremap l <Down>

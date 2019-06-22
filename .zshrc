@@ -8,7 +8,7 @@
 #                          #
 ############################
 
-at42=false
+at42=true
 
 if [ $at42 = true ]; then
 	HOME="/Users/aguiot--"
@@ -141,6 +141,9 @@ alias pyg='pygmentize -g'
 alias d='docker'
 alias dc='docker-compose'
 alias dm='docker-machine'
+if [ $at42 = true ]; then
+	alias 42clean="rm -rf ~/Library/**.42_cache_bak*; rm -rf ~/**.42_cache_bak; rm -rf ~/Library/Caches; brew cleanup" 
+fi
 
 # Dart
 export PATH="$PATH:/usr/lib/dart/bin:$HOME/.pub-cache/bin"
@@ -148,9 +151,12 @@ export PATH="$PATH:/usr/lib/dart/bin:$HOME/.pub-cache/bin"
 # NPM
 export PATH="$PATH:$HOME/.npm-global/bin/"
 
+# Go
+export GOPATH="$HOME/go"
+
 # 42School: PATH
 if [ $at42 = true ]; then
-	export PATH="$PATH:/Users/aguiot--/.brew/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki"
+	export PATH="$HOME/.brew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:$PATH"
 fi
 
 # tmux
@@ -158,11 +164,19 @@ bindkey -r "^[a" # change "replace-and-hold to null
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
-source $XDG_CONFIG_HOME/tmux/tmuxinator.zsh
+
+if [ $at42 = false ]; then
+	source $XDG_CONFIG_HOME/tmux/tmuxinator.zsh
+fi
 
 # asdf version manager
-source /opt/asdf-vm/asdf.sh
-source /opt/asdf-vm/completions/asdf.bash
+if [ $at42 = true ]; then
+	source $HOME/.brew/Cellar/asdf/0.7.2/asdf.sh
+	source $HOME/.brew/etc/bash_completion.d/asdf.bash
+else
+	source /opt/asdf-vm/asdf.sh
+	source /opt/asdf-vm/completions/asdf.bash
+fi
 
 # Source RVM scripts
 #source $HOME/.rvm/scripts/rvm
