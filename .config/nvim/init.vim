@@ -40,6 +40,7 @@ set number
 syntax on
 set noswapfile
 set mouse=a
+
 set nrformats+=alpha
 set shiftwidth=4
 set tabstop=4
@@ -87,15 +88,15 @@ nnoremap <leader>sv :windo so $MYVIMRC<CR>
 nnoremap <Esc><Esc> :w<CR>
 nnoremap <S-w> :w<CR>
 nnoremap <S-q> :q<CR>
-inoremap { {<CR>}<esc>O
 nnoremap <F5> :UndotreeToggle<CR>
-"nnoremap <A-Up> :m .-2<CR>==
-"nnoremap <A-Down> :m .+1<CR>==
+nnoremap <S-Up> :m .-2<CR>==
+nnoremap <S-Down> :m .+1<CR>==
 nnoremap <Tab> :tabnext<CR>
 nnoremap <S-Tab> :tabprev<CR>
 nnoremap <leader>s :ToggleWorkspace<CR>
-inoremap ( ()<Left>
-inoremap [ []<Left>
+inoremap { {<CR>}<esc>O
+"inoremap ( ()<Left>
+"inoremap [ []<Left>
 tnoremap <Esc> <C-\><C-n>
 
 
