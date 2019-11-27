@@ -22,7 +22,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 #export TERM="xterm-256color"
 POWERLEVEL9K_MODE="nerdfont-complete"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME=powerlevel10k/powerlevel10k
 
 plugins=(
   git
@@ -34,6 +35,8 @@ plugins=(
   archlinux
   #battery
   tmuxinator
+  colored-man-pages
+  asdf
 )
 
 # Path to your oh-my-zsh installation.
@@ -48,7 +51,7 @@ POWERLEVEL9K_CUSTOM_ARCH_ICON="echo "
 POWERLEVEL9K_CUSTOM_ARCH_ICON_BACKGROUND=069
 POWERLEVEL9K_CUSTOM_ARCH_ICON_FOREGROUND=015
 # Prompt customization (powerlevel9k)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_arch_icon root_indicator docker_machine aws ssh user dir dir_writable vcs rvm)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_arch_icon root_indicator docker_machine aws ssh user dir dir_writable vcs) #rvm
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs disk_usage time ram command_execution_time) #battery_pct_prompt 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
@@ -184,3 +187,6 @@ fi
 #[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 #export PATH="$PATH:$HOME/.rvm/bin"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
