@@ -112,17 +112,25 @@ nnoremap <C-Left> :TmuxNavigateLeft<CR>
 "map <A-k> <Left>
 "map <A-l> <Down>
 "map <A-;> <Right>
-noremap <A-o> o
-noremap ø o
-noremap o <Up>
-noremap k <Left>
-noremap l <Down>
-noremap ; <Right>
-inoremap <A-o> <Up>
-inoremap <A-k> <Left>
-inoremap <A-l> <Down>
-inoremap <A-;> <Right>
+nnoremap <A-o> o
+nnoremap ø o
+nnoremap o <Up>
+nnoremap k <Left>
+nnoremap l <Down>
+nnoremap ; <Right>
+inoremap ø <Up>
+inoremap ˚ <Left>
+inoremap ¬ <Down>
+inoremap … <Right>
+"inoremap <A-o> <Up>
+"inoremap <A-k> <Left>
+"inoremap <A-l> <Down>
+"inoremap <A-;> <Right>
 
+vnoremap o <Up>
+vnoremap k <Left>
+vnoremap l <Down>
+vnoremap ; <Right>
 
 "-------------------------------- TOGGLE HYBRID NUMBERS ------------------------
 augroup numbertoggle
