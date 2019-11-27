@@ -77,6 +77,7 @@ export LC_COLLATE=C #sort by ASCII
 export MYVIMRC="$HOME/.config/nvim/init.vim"
 export MYZSHRC="$HOME/.zshrc"
 export MYTMUXCONF="$HOME/.config/tmux/tmux.conf"
+export CDPATH=".:$HOME:$HOME/Documents"
 DEFAULT_USER=aguiot
 
 # 42School: User configuration
@@ -155,11 +156,12 @@ export PATH="$PATH:/usr/lib/dart/bin:$HOME/.pub-cache/bin"
 export PATH="$PATH:$HOME/.npm-global/bin/"
 
 # Go
-export GOPATH="$HOME/go"
+export GOPATH="$HOME/go"; [ $at42 = true ] && export GOPATH="$HOME/Documents/go"
+export PATH="$PATH:$GOPATH/bin"
 
 # 42School: PATH
 if [ $at42 = true ]; then
-	export PATH="$HOME/.brew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:$PATH"
+	export PATH="$HOME/.brew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:$HOME/.local/bin:$PATH"
 fi
 
 # tmux
@@ -174,7 +176,8 @@ fi
 
 # asdf version manager
 if [ $at42 = true ]; then
-	source $HOME/.brew/Cellar/asdf/0.7.2/asdf.sh
+	source $HOME/.brew/Cellar/asdf/0.7.5/asdf.sh
+#	source $(brew info asdf | grep Cellar | cut -d ' ' -f 1)/asdf.sh
 	source $HOME/.brew/etc/bash_completion.d/asdf.bash
 else
 	source /opt/asdf-vm/asdf.sh
