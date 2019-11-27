@@ -153,6 +153,9 @@ if [ $at42 = true ]; then
 	alias 42FC='bash ~/Documents/Tools/42FileChecker/42FileChecker.sh'
 	alias RP42='open /sgoinfre/goinfre/Perso/aguiot--/public/RP42.app'
 	alias fixd="$HOME/Documents/Tools/fix_docker.sh"
+	function valgrind_make () { docker run --workdir $HOME --entrypoint sh -v $PWD:$HOME mooreryan/valgrind -c "make && valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --show-reachable=yes $*" }
+	function valgrind_custom () { docker run --workdir $HOME --entrypoint sh -v $PWD:$HOME mooreryan/valgrind -c "$1 && valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --show-reachable=yes $2" }
+	alias valgrind='valgrind_make'
 fi
 
 # Dart
