@@ -126,27 +126,33 @@ retry()
 # docker
 undock() { eval $(docker-machine env -u) }
 dock()   { undock; eval $(docker-machine env $1) }
+alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
 
 # Aliases
-alias cls="clear && ls"
-alias cl="clear"
-alias gl="git --no-pager log --graph --decorate --oneline"
-alias gs="git status -unormal"
-alias gsa="git status -uall"
-alias gcm="git commit -m"
-alias gww="gcc -Wall -Wextra -Werror"
-alias 42FC="bash ~/Documents/42FileChecker/42FileChecker.sh"
-alias imgcat="~/imgcat.sh $1"
-alias vim="nvim"
-alias svim="nvim -u ~/.SpaceVim/vimrc"
+alias cls='clear && ls'
+alias cl='clear'
+alias gl='git --no-pager log -n 10 --graph --decorate --oneline --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr)%Creset %s %Creset'\'
+alias gll='git --no-pager log --graph --decorate --oneline --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr)%Creset %s %Creset'\'
+alias gs='git status -unormal'
+alias gsa='git status -uall'
+alias gcm='git commit -m'
+alias gww='gcc -Wall -Wextra -Werror'
+alias imgcat='~/imgcat.sh $1'
+alias vim='nvim'
+alias svim='nvim -u ~/.SpaceVim/vimrc'
 alias rcl='printf "\ec"'
 alias showall='tail -n+1 *'
 alias pyg='pygmentize -g'
 alias d='docker'
 alias dc='docker-compose'
 alias dm='docker-machine'
+alias j='fasd_cd -d'
+alias gdc='gd --cached'
 if [ $at42 = true ]; then
-	alias 42clean="rm -rf ~/Library/**.42_cache_bak*; rm -rf ~/**.42_cache_bak; rm -rf ~/Library/Caches; brew cleanup" 
+	alias 42clean='rm -f ~/.zcompdump*; rm -rf ~/.cache; rm -rf ~/Library/Caches; brew cleanup'
+	alias 42FC='bash ~/Documents/Tools/42FileChecker/42FileChecker.sh'
+	alias RP42='open /sgoinfre/goinfre/Perso/aguiot--/public/RP42.app'
+	alias fixd="$HOME/Documents/Tools/fix_docker.sh"
 fi
 
 # Dart
