@@ -276,3 +276,14 @@ let g:NERDSpaceDelims = 1
 let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+"--------------------------- COLOR COLUMN TOGGLE -------------------------------
+nnoremap <leader>c :call ColorColumnToggle()<cr>
+
+function! ColorColumnToggle()
+    if &colorcolumn
+        setlocal colorcolumn=
+    else
+        setlocal colorcolumn=81
+    endif
+endfunction
