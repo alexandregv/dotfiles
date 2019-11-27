@@ -21,7 +21,16 @@ Plug 'mhinz/vim-mix-format'
 Plug 'edkolev/tmuxline.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'jparise/vim-graphql'
+"Plug 'mxw/vim-jsx'
 call plug#end()
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 "-------------------------------- MISC CONFIG ----------------------------------
 set linebreak
@@ -219,13 +228,13 @@ let g:netrw_preview=1		" press p to Preview, then Ctrl-W z to close
 nnoremap <leader>l :Lex<cr>
 
 
-"-------------------------------- NERDTREE ----------------------------------------
+"-------------------------------- NERDTREE -------------------------------------
 let g:NERDTreeHijackNetrw = 0
 let g:ranger_replace_netrw = 1
 nnoremap <leader>] :NERDTree<cr>
 
 
-"-------------------------------- RANGER ----------------------------------------
+"-------------------------------- RANGER ---------------------------------------
 let g:ranger_map_keys = 0
 nnoremap <leader>[ :Ranger<cr>
 
