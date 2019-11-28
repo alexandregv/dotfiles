@@ -155,7 +155,7 @@ if [ $at42 = true ]; then
 
 	# 42toolbox (https://github.com/alexandregv/42toolbox)
 	# Alias format: tb + script first letter
-	alias tbs="$HOME/42toolbox/init_docker.sh"
+	alias tbs="$HOME/42toolbox/init_session.sh"
 	alias tbd="$HOME/42toolbox/init_docker.sh"
 
 	# valgrind macOS
