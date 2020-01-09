@@ -131,8 +131,8 @@ alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}
 # Aliases
 alias cls='clear && ls'
 alias cl='clear'
-alias gl='git --no-pager log -n 10 --graph --decorate --oneline --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr)%Creset %s %Creset'\'
-alias gll='git --no-pager log --graph --decorate --oneline --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr)%Creset %s %Creset'\'
+alias gl='git --no-pager log -n 10 --graph --decorate --oneline --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr)%Creset %C(yellow)(%an%C(yellow))%Creset %s %Creset'\'
+alias gll='git --no-pager log --graph --decorate --oneline --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %Cgreen(%cr)%Creset %C(yellow)(%an%C(yellow))%Creset %s %Creset'\'
 alias gs='git status -unormal'
 alias gsa='git status -uall'
 alias gcm='git commit -m'
