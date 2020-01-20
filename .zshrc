@@ -8,12 +8,12 @@
 #                          #
 ############################
 
-at42=true
+at42=false
 
 if [ $at42 = true ]; then
 	HOME="/Users/aguiot--"
 else
-	HOME="/home/aguiot"
+	HOME="/home/aguiot--"
 fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -78,7 +78,7 @@ export MYVIMRC="$HOME/.config/nvim/init.vim"
 export MYZSHRC="$HOME/.zshrc"
 export MYTMUXCONF="$HOME/.config/tmux/tmux.conf"
 export CDPATH=".:$HOME:$HOME/Documents"
-DEFAULT_USER=aguiot
+DEFAULT_USER=aguiot--
 
 # 42School: User configuration
 if [ $at42 = true ]; then
