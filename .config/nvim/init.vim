@@ -84,10 +84,36 @@ endif
 let g:palenight_terminal_italics=1
 
 
+function! VsRight()
+	set splitright
+	exec "vs"
+endfunction
+
+function! VsLeft()
+	set splitright!
+	exec "vs"
+	set splitright
+endfunction
+
+function! SpUp()
+	set splitbelow!
+	exec "sp"
+	set splitbelow
+endfunction
+
+function! SpDown()
+	set splitbelow
+	exec "sp"
+endfunction
+
 "-------------------------------- MISC MAPPINGS --------------------------------
 iabbrev mainc int		main(int argc, char **argv)<cr>{<cr><esc>
 noremap <leader>h :noh<CR>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader><Right> :call VsRight()<CR>
+nnoremap <leader><Left> :call VsLeft()<CR>
+nnoremap <leader><Up> :call SpUp()<CR>
+nnoremap <leader><Down> :call SpDown()<CR>
 nnoremap <leader>sv :windo so $MYVIMRC<CR>
 nnoremap <Esc><Esc> :w<CR>
 nnoremap <S-w> :w<CR>
