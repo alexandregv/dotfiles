@@ -25,6 +25,7 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'jparise/vim-graphql'
 "Plug 'mxw/vim-jsx'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
