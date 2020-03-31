@@ -22,8 +22,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 #export TERM="xterm-256color"
 POWERLEVEL9K_MODE="nerdfont-complete"
-#ZSH_THEME="powerlevel9k/powerlevel9k"
-ZSH_THEME=powerlevel10k/powerlevel10k
+ZSH_THEME=powerlevel10k/powerlevel10k # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
 plugins=(
   git
@@ -207,16 +206,6 @@ if [ $at42 = true ]; then
 	source $HOME/.brew/Cellar/asdf/0.7.5/asdf.sh
 #	source $(brew info asdf | grep Cellar | cut -d ' ' -f 1)/asdf.sh
 fi
-
-# Source RVM scripts
-#source $HOME/.rvm/scripts/rvm
-# RVM bash completion
-#[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-#export PATH="$PATH:$HOME/.rvm/bin"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # direnv
 eval "$(direnv hook zsh)"
