@@ -30,7 +30,7 @@ plugins=(
   docker
   aws
   heroku
-  autojump
+  fasd
   catimg
   archlinux
   #battery
@@ -86,7 +86,8 @@ if [ $at42 = true ]; then
 	export MAIL=aguiot--@student.42.fr
 fi
 
-eval "$(fasd --init auto)"
+# Init fasd, more here: https://github.com/clvv/fasd#install
+eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
