@@ -26,6 +26,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'jparise/vim-graphql'
 "Plug 'mxw/vim-jsx'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
