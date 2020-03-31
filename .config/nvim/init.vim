@@ -120,7 +120,7 @@ nnoremap <leader><Up> :call SpUp()<CR>
 nnoremap <leader><Down> :call SpDown()<CR>
 nnoremap <leader>sv :windo so $MYVIMRC<CR>
 nnoremap <Esc><Esc> :w<CR>
-nnoremap <S-w> :w<CR>
+nnoremap <C-S> :w<CR>
 nnoremap <S-q> :q<CR>
 nnoremap <F5> :UndotreeToggle<CR>
 nnoremap <S-Up> :m .-2<CR>==
