@@ -136,6 +136,14 @@ tnoremap <Esc> <C-\><C-n>
 noremap ' ci'
 noremap " ci"
 
+"-------------------------------- VIM-GO ----------------------------------
+let g:go_highlight_types = 1 " Highlight types
+let g:go_fmt_command = "goimports" " Run goimports (+ fmt) on save
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+" Mappings: see ~/.config/nvim/ftplugin/go_mappings.vim
+
 "-------------------------------- TMUX ARROWS ----------------------------------
 let g:tmux_navigator_no_mappings = 1
 nnoremap <C-Down> :TmuxNavigateDown<CR>
