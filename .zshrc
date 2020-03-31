@@ -156,6 +156,18 @@ alias dc='docker-compose'
 alias dm='docker-machine'
 alias j='fasd_cd -d'
 alias gdc='gd --cached'
+
+unalias gcl;
+function gcl() {
+	git clone --recurse-submodules "$@"
+	echo ""
+	if [[ -n "$2" ]]; then
+		cd "$2"
+	else
+		cd "$(basename "$1" .git)"
+	fi
+}
+
 if [ $at42 = true ]; then
 	alias 42clean='rm -f ~/.zcompdump*; rm -rf ~/.cache; rm -rf ~/Library/Caches; brew cleanup'
 	alias 42FC='bash ~/Documents/Tools/42FileChecker/42FileChecker.sh'
