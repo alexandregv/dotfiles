@@ -28,6 +28,7 @@ Plug 'jparise/vim-graphql'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
+Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/Align'
 call plug#end()
 
@@ -331,3 +332,21 @@ function! ColorColumnToggle()
         setlocal colorcolumn=81
     endif
 endfunction
+
+"------------------------------- EASY MOTION -----------------------------------
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `j{char}{label}`
+nmap j <Plug>(easymotion-overwin-f)
+
+let g:EasyMotion_smartcase = 1 " Turn on case-insensitive feature
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>w <Plug>(easymotion-w)
+map <Leader>W <Plug>(easymotion-W)
+map <Leader>b <Plug>(easymotion-b)
+map <Leader>bb <Plug>(easymotion-b)
+map <Leader>B <Plug>(easymotion-B)
