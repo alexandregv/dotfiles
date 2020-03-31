@@ -64,6 +64,7 @@ set listchars=tab:\ \ ,trail:␣
 syn keyword cTodo DEBUG
 let g:workspace_session_directory = $HOME . '/.vim/sessions/'
 let g:workspace_undodir=$HOME . '/.vim/undodir'
+set nofixendofline
 
 
 "-------------------------------- PALENIGHT ------------------------------------
