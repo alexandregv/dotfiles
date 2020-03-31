@@ -28,6 +28,7 @@ Plug 'jparise/vim-graphql'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
+Plug 'vim-scripts/Align'
 call plug#end()
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
