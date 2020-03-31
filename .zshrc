@@ -184,6 +184,8 @@ export GOPATH="$HOME/go"; [ $at42 = true ] && export GOPATH="$HOME/Documents/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOPATH/bin"
 
+# nami
+export PATH="$PATH:$HOME/.nami/bin"
 
 # 42School: PATH
 if [ $at42 = true ]; then
