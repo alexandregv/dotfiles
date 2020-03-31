@@ -132,7 +132,8 @@ inoremap { {<CR>}<esc>O
 "inoremap ( ()<Left>
 "inoremap [ []<Left>
 tnoremap <Esc> <C-\><C-n>
-
+noremap ' ci'
+noremap " ci"
 
 "-------------------------------- TMUX ARROWS ----------------------------------
 let g:tmux_navigator_no_mappings = 1
