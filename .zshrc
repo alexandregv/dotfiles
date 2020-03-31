@@ -206,10 +206,6 @@ fi
 if [ $at42 = true ]; then
 	source $HOME/.brew/Cellar/asdf/0.7.5/asdf.sh
 #	source $(brew info asdf | grep Cellar | cut -d ' ' -f 1)/asdf.sh
-	source $HOME/.brew/etc/bash_completion.d/asdf.bash
-else
-	source /opt/asdf-vm/asdf.sh
-	source /opt/asdf-vm/completions/asdf.bash
 fi
 
 # Source RVM scripts
