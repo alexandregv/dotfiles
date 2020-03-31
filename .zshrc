@@ -42,6 +42,14 @@ plugins=(
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Homebrew completion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 source $ZSH/oh-my-zsh.sh
