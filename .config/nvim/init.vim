@@ -30,6 +30,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/Align'
+" Plug 'itchyny/vim-gof'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'wlemuel/vim-tldr'
 call plug#end()
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
