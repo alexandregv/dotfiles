@@ -227,3 +227,7 @@ eval "$(direnv hook zsh)"
 # Disable correction for hidden files (.ssh) or dot paths (...)
 export CORRECT_IGNORE_FILE=.*
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Nix package manager
+if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
+export NIX_PAGER=cat
