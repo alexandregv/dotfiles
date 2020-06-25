@@ -133,7 +133,7 @@ nnoremap <S-Down> :m .+1<CR>==
 nnoremap <Tab> :tabnext<CR>
 nnoremap <S-Tab> :tabprev<CR>
 nnoremap <leader>s :ToggleWorkspace<CR>
-inoremap { {<CR>}<esc>O
+" inoremap { {<CR>}<esc>O
 "inoremap ( ()<Left>
 "inoremap [ []<Left>
 tnoremap <Esc> <C-\><C-n>
