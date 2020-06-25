@@ -58,7 +58,7 @@ POWERLEVEL9K_CUSTOM_ARCH_ICON="echo "
 POWERLEVEL9K_CUSTOM_ARCH_ICON_BACKGROUND=069
 POWERLEVEL9K_CUSTOM_ARCH_ICON_FOREGROUND=015
 # Prompt customization (powerlevel9k)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_arch_icon root_indicator docker_machine aws ssh user dir dir_writable vcs) #rvm
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_arch_icon root_indicator docker_machine aws ssh dir dir_writable vcs) #rvm
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs disk_usage time ram command_execution_time) #battery_pct_prompt 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
