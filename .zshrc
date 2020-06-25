@@ -156,6 +156,8 @@ alias dc='docker-compose'
 alias dm='docker-machine'
 alias j='fasd_cd -d'
 alias gdc='gd --cached'
+alias norminette='~/.norminette/norminette.rb'
+alias scc="scc --sort code --no-complexity --no-cocomo"
 
 unalias gcl;
 function gcl() {
