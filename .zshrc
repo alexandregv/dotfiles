@@ -81,6 +81,9 @@ export MYTMUXCONF="$HOME/.config/tmux/tmux.conf"
 export CDPATH=".:$HOME:$HOME/Documents"
 DEFAULT_USER=aguiot--
 
+# Load ssh keys
+ssh-add ~/.ssh/*.priv
+
 # 42School: User configuration
 if [ $at42 = true ]; then
 	DEFAULT_USER=aguiot--
