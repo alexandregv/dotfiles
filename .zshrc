@@ -82,7 +82,7 @@ export CDPATH=".:$HOME:$HOME/Documents"
 DEFAULT_USER=aguiot--
 
 # Load ssh keys
-ssh-add ~/.ssh/*.priv
+ssh-add -q ~/.ssh/*.priv
 
 # 42School: User configuration
 if [ $at42 = true ]; then
