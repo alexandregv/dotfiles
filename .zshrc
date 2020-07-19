@@ -90,6 +90,10 @@ if [ $at42 = true ]; then
 	export MAIL=aguiot--@student.42.fr
 fi
 
+# Nix package manager
+if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
+export NIX_PAGER=cat
+
 # Init fasd, more here: https://github.com/clvv/fasd#install
 eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
@@ -224,7 +228,3 @@ eval "$(direnv hook zsh)"
 # Disable correction for hidden files (.ssh) or dot paths (...)
 export CORRECT_IGNORE_FILE=.*
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Nix package manager
-if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
-export NIX_PAGER=cat
