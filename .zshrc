@@ -82,7 +82,7 @@ export CDPATH=".:$HOME:$HOME/Documents"
 DEFAULT_USER=aguiot--
 
 # Load ssh keys
-ssh-add -q ~/.ssh/*.priv
+find ~/.ssh/ -type f -name '*.priv' -exec ssh-add -q {} +
 
 # 42School: User configuration
 if [ $at42 = true ]; then
@@ -110,7 +110,7 @@ if [ $at42 = true ]; then
 	defaults -currentHost write com.apple.screensaver 'PrefsVersion' -int "100"
 	defaults -currentHost write com.apple.screensaver 'idleTime' -int "120"
 	defaults -currentHost write com.apple.screensaver "moduleDict" -dict-add "moduleName" -string "LookThrough"
-	defaults -currentHost write com.apple.screensaver "moduleDict" -dict-add "path" -string "/Users/aguiot--/Library/Screen Savers/LookThrough.saver"
+	defaults -currentHost write com.apple.screensaver "moduleDict" -dict-add "path" -string "$HOME/Library/Screen Savers/LookThrough.saver"
 	defaults -currentHost write com.apple.screensaver "moduleDict" -dict-add "type" -int "0"
 	defaults -currentHost write com.apple.screensaver 'ShowClock' -bool "false"
 fi
@@ -119,18 +119,18 @@ fi
 function cd() { builtin cd "$*" && ls; }
 
 # 42School: retry
-retry()
-{
-  url=$(git remote get-url origin)
-  nb=${url: -1}
-  if ! [[ $nb =~ '^[0-9]+$' ]]; then
-	  git remote set-url origin $url"2"
-  else
-	  url=$(echo $url | rev | cut -c 2- | rev)
-	  git remote set-url origin $url$((nb+1))
-  fi
-  echo "New remote URL: $(git remote get-url origin)\n(lol u retried, u noob)"
-}
+#retry()
+#{
+#  url=$(git remote get-url origin)
+#  nb=${url: -1}
+#  if ! [[ $nb =~ '^[0-9]+$' ]]; then
+#	  git remote set-url origin $url"2"
+#  else
+#	  url=$(echo $url | rev | cut -c 2- | rev)
+#	  git remote set-url origin $url$((nb+1))
+#  fi
+#  echo "New remote URL: $(git remote get-url origin)\n(lol u retried, u noob)"
+#}
 
 # docker
 undock() { eval $(docker-machine env -u) }
@@ -218,8 +218,7 @@ fi
 
 # asdf version manager
 if [ $at42 = true ]; then
-	source $HOME/.brew/Cellar/asdf/0.7.5/asdf.sh
-#	source $(brew info asdf | grep Cellar | cut -d ' ' -f 1)/asdf.sh
+    . $(brew --prefix asdf)/asdf.sh
 fi
 
 # direnv
