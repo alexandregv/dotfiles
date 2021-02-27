@@ -126,6 +126,30 @@ else
 	export EDITOR='nvim'
 fi
 
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# Dart
+export PATH="$PATH:/usr/lib/dart/bin:$HOME/.pub-cache/bin"
+
+# NPM
+export PATH="$PATH:$HOME/.npm-global/bin"
+
+# Go
+export GOPATH="$HOME/go"; [ $at42 = true ] && export GOPATH="$HOME/Documents/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$PATH:$GOBIN"
+
+# nami
+export PATH="$PATH:$HOME/.nami/bin"
+
+# rust / cargo
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# 42School: PATH
+if [ $at42 = true ]; then
+	export PATH="$HOME/.brew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:$PATH"
+fi
 
 # Preferred web browser
 command -v google-chrome-stable &>/dev/null && export BROWSER="google-chrome-stable"
@@ -212,30 +236,6 @@ if [ $at42 = true ]; then
 	alias valgrind='valgrind_make'
 fi
 
-export PATH="$HOME/.local/bin:$PATH"
-
-# Dart
-export PATH="$PATH:/usr/lib/dart/bin:$HOME/.pub-cache/bin"
-
-# NPM
-export PATH="$PATH:$HOME/.npm-global/bin"
-
-# Go
-export GOPATH="$HOME/go"; [ $at42 = true ] && export GOPATH="$HOME/Documents/go"
-export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$GOBIN"
-
-# nami
-export PATH="$PATH:$HOME/.nami/bin"
-
-# rust / cargo
-export PATH="$PATH:$HOME/.cargo/bin"
-
-# 42School: PATH
-if [ $at42 = true ]; then
-	export PATH="$HOME/.brew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:$PATH"
-fi
-
 # tmux
 bindkey -r "^[a" # change "replace-and-hold to null
 if command -v tmux &> /dev/null && [ -z "$TMUX" ] && (tmux ls -F '#{session_attached}' | (! grep -q '1')); then
@@ -276,3 +276,6 @@ source "$HOME/.nix-profile/share/mcfly/mcfly.zsh"
 # keyboard
 setxkbmap -layout us -variant intl
 xmodmap ~/.Xmodmap || true
+
+# clean PATH
+export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
