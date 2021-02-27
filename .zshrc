@@ -212,16 +212,18 @@ if [ $at42 = true ]; then
 	alias valgrind='valgrind_make'
 fi
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # Dart
 export PATH="$PATH:/usr/lib/dart/bin:$HOME/.pub-cache/bin"
 
 # NPM
-export PATH="$PATH:$HOME/.npm-global/bin/"
+export PATH="$PATH:$HOME/.npm-global/bin"
 
 # Go
 export GOPATH="$HOME/go"; [ $at42 = true ] && export GOPATH="$HOME/Documents/go"
 export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$GOBIN"
 
 # nami
 export PATH="$PATH:$HOME/.nami/bin"
@@ -231,7 +233,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 # 42School: PATH
 if [ $at42 = true ]; then
-	export PATH="$HOME/.brew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:$HOME/.local/bin:$PATH"
+	export PATH="$HOME/.brew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:$PATH"
 fi
 
 # tmux
