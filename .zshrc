@@ -36,6 +36,7 @@ plugins=(
   colored-man-pages
   asdf
   zsh-completions
+  jira
 )
 
 # Path to your oh-my-zsh installation.
@@ -150,6 +151,11 @@ export PATH="$PATH:$HOME/.cargo/bin"
 if [ $at42 = true ]; then
 	export PATH="$HOME/.brew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:$PATH"
 fi
+
+# Jira plugin
+JIRA_URL="https://42paris.atlassian.net/"
+JIRA_NAME="Reach"
+JIRA_DEFAULT_ACTION="dashboard"
 
 # Preferred web browser
 command -v google-chrome-stable &>/dev/null && export BROWSER="google-chrome-stable"
