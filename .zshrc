@@ -116,6 +116,10 @@ else
 	export EDITOR='nvim'
 fi
 
+
+# Preferred web browser
+command -v google-chrome-stable &>/dev/null && export BROWSER="google-chrome-stable"
+
 # 42School: Set ScreenSaver to LookThrough
 if [ $at42 = true ]; then
 	defaults -currentHost write com.apple.screensaver 'CleanExit' -string "YES"
