@@ -32,6 +32,7 @@ plugins=(
   tmuxinator
   colored-man-pages
   asdf
+  zsh-completions
 )
 
 # Path to your oh-my-zsh installation.
