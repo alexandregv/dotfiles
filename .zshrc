@@ -222,8 +222,8 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
 
-if [ $at42 = false ]; then
-	source $XDG_CONFIG_HOME/tmux/tmuxinator.zsh
+if [ -e "$XDG_CONFIG_HOME/tmux/tmuxinator.zsh" ]; then
+	source "$XDG_CONFIG_HOME/tmux/tmuxinator.zsh"
 fi
 
 # asdf version manager
