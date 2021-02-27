@@ -208,6 +208,9 @@ export PATH="$PATH:$GOPATH/bin"
 # nami
 export PATH="$PATH:$HOME/.nami/bin"
 
+# rust / cargo
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # 42School: PATH
 if [ $at42 = true ]; then
 	export PATH="$HOME/.brew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:$HOME/.local/bin:$PATH"
