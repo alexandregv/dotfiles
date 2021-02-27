@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'vim-syntastic/syntastic'
+Plug 'cacharle/c_formatter_42.vim'
 Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
