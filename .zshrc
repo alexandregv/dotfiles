@@ -14,7 +14,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-#export TERM="xterm-256color"
+if [[ "$TERM" == xterm* ]]; then
+	TERM="xterm-256color";
+fi
 POWERLEVEL9K_MODE="nerdfont-complete"
 ZSH_THEME=powerlevel10k/powerlevel10k # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
