@@ -1,0 +1,133 @@
+---
+profiles:
+  - name: ls
+    registered_commands:
+      - ls -1
+      - ls -a
+      - ls
+    key_bindings:
+      - key: d
+        command: rm -rf $0
+        confirm: true
+        regex: ~
+      - key: o
+        command: code -r $0
+        confirm: false
+        regex: ~
+      - key: u
+        command: cd $0
+        confirm: false
+        regex: ~
+    lines_to_skip: 0
+    refresh_frequency: ~
+    display_command: ~
+  - name: ls -l
+    registered_commands:
+      - ls -l
+    key_bindings:
+      - key: d
+        command: rm -rf $8
+        confirm: true
+        regex: ~
+      - key: o
+        command: code -r $8
+        confirm: false
+        regex: ~
+      - key: u
+        command: cd $8
+        confirm: false
+        regex: ~
+    lines_to_skip: 1
+    refresh_frequency: ~
+    display_command: ~
+  - name: git status --short
+    registered_commands:
+      - git status --short
+    key_bindings:
+      - key: A
+        command: git add $1
+        confirm: false
+        regex: ~
+      - key: a
+        command: git reset $1
+        confirm: false
+        regex: ~
+      - key: d
+        command: rm -rf $1
+        confirm: true
+        regex: ~
+    lines_to_skip: 0
+    refresh_frequency: ~
+    display_command: ~
+  - name: git status
+    registered_commands:
+      - git status
+    key_bindings:
+      - key: A
+        command: git add $0
+        confirm: false
+        regex: ~
+      - key: a
+        command: git reset $1
+        confirm: true
+        regex: ".*:\\s+([^\\s]+)"
+      - key: d
+        command: rm -rf $1
+        confirm: true
+        regex: ~
+    lines_to_skip: 0
+    refresh_frequency: ~
+    display_command: ~
+  - name: docker ps
+    registered_commands:
+      - docker ps
+    key_bindings:
+      - key: s
+        command: docker stop $0
+        confirm: true
+        regex: ~
+      - key: r
+        command: docker restart $0
+        confirm: false
+        regex: ~
+      - key: d
+        command: docker kill $0
+        confirm: true
+        regex: ~
+    lines_to_skip: 0
+    refresh_frequency: ~
+    display_command: ~
+  - name: git branch
+    registered_commands:
+      - git branch
+    key_bindings:
+      - key: c
+        command: git checkout $1
+        confirm: false
+        regex: ~
+    lines_to_skip: 0
+    refresh_frequency: ~
+    display_command: ~
+  - name: git log
+    registered_commands:
+      - git log --oneline
+    key_bindings:
+      - key: c
+        command: git checkout $0
+        confirm: false
+        regex: ~
+    lines_to_skip: 0
+    refresh_frequency: ~
+    display_command: ~
+  - name: lsof -iTCP | grep LISTEN
+    registered_commands:
+      - lsof -iTCP | grep LISTEN
+      - lsof -iTCP
+    key_bindings:
+      - key: d
+        command: kill -9 $1
+        confirm: true
+        regex: ~
+    lines_to_skip: 0
+    refresh_frequency: ~
+    display_command: ~
