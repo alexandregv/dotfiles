@@ -79,7 +79,8 @@ POWERLEVEL9K_ROOT_ICON="\uf0e7"
 POWERLEVEL9K_USER_ICON="\uf007"
 POWERLEVEL9K_SUDO_ICON="\uf09c"
 
-export LANG=en_US.UTF-8
+export LANG="en_US.utf8"
+export LC_ALL="en_US.utf8"
 export LC_COLLATE=C #sort by ASCII
 export MYVIMRC="$HOME/.config/nvim/init.vim"
 export MYZSHRC="$HOME/.zshrc"
