@@ -46,15 +46,15 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Homebrew completion
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+	FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-  autoload -Uz compinit
-  compinit
+	autoload -Uz compinit
+	compinit
 fi
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # Replaces os_icon with better colors
 POWERLEVEL9K_CUSTOM_ARCH_ICON="echo "
@@ -74,6 +74,8 @@ POWERLEVEL9K_TIME_FORMAT='%D{%H:%M}'
 # Autocorrect commands
 ENABLE_CORRECTION="true"
 setopt correct_all
+# Disable correction for hidden files (.ssh) or dot paths (...)
+export CORRECT_IGNORE_FILE='.*'
 # Multiline prompt prefix
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 #POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
@@ -109,9 +111,9 @@ eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-ins
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+	export EDITOR='vim'
 else
-  export EDITOR='nvim'
+	export EDITOR='nvim'
 fi
 
 # 42School: Set ScreenSaver to LookThrough
@@ -143,8 +145,8 @@ function cd() { builtin cd "$*" && ls; }
 #}
 
 # docker
-undock() { eval $(docker-machine env -u) }
-dock()   { undock; eval $(docker-machine env $1) }
+undock() { eval "$(docker-machine env -u)"; }
+dock()   { undock; eval "$(docker-machine env "$1")"; }
 alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
 
 # Aliases
@@ -192,8 +194,8 @@ if [ $at42 = true ]; then
 	alias tbd="$HOME/42toolbox/init_docker.sh"
 
 	# valgrind macOS
-	function valgrind_make ()   { docker run --workdir $HOME --entrypoint sh -v $PWD:$HOME mooreryan/valgrind -c "make && valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --show-reachable=yes $*" }
-	function valgrind_custom () { docker run --workdir $HOME --entrypoint sh -v $PWD:$HOME mooreryan/valgrind -c "$1 && valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --show-reachable=yes $2" }
+	function valgrind_make ()   { docker run --workdir "$HOME" --entrypoint sh -v "$PWD:$HOME" mooreryan/valgrind -c "make && valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --show-reachable=yes $*"; }
+	function valgrind_custom () { docker run --workdir "$HOME" --entrypoint sh -v "$PWD:$HOME" mooreryan/valgrind -c "$1 && valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --show-reachable=yes $2"; }
 	alias valgrind='valgrind_make'
 fi
 
@@ -221,7 +223,7 @@ fi
 
 # tmux
 bindkey -r "^[a" # change "replace-and-hold to null
-if command -v tmux &> /dev/null && [ -z "$TMUX" ] && $(tmux ls -F '#{session_attached}' | (! grep -q '1')); then
+if command -v tmux &> /dev/null && [ -z "$TMUX" ] && (tmux ls -F '#{session_attached}' | (! grep -q '1')); then
 	tmux attach -t default || tmux new -s default
 fi
 
@@ -231,12 +233,11 @@ fi
 
 # asdf version manager
 if [ $at42 = true ]; then
-    . $(brew --prefix asdf)/asdf.sh
+    . "$(brew --prefix asdf)/asdf.sh"
 fi
 
 # direnv
 eval "$(direnv hook zsh)"
 
-# Disable correction for hidden files (.ssh) or dot paths (...)
-export CORRECT_IGNORE_FILE=.*
+# iTerm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
