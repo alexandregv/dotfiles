@@ -1,0 +1,38 @@
+#!/bin/sh
+
+system_type=$(uname -s)
+
+echo "Updating the yadm repo origin URL"
+yadm remote set-url origin "git@github.com:alexandregv/dotfiles.git"
+
+if command -v nix-channel >/dev/null 2>&1; then
+        echo "Updating nix channels"
+        nix-channel --update
+        if (command -v nix-env >/dev/null 2>&1) && test -f ~/.Nixfile; then
+                echo "Installing nixpkgs with nix-env"
+                xargs -I% nix-env -f '<nixpkgs>' -iA % < ~/.Nixfile
+        fi
+fi
+
+if [ "$system_type" = "Darwin" ]; then
+  # install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo "Updating homebrew bundle"
+    brew bundle --global
+  fi
+fi
+
+if command -v nvim >/dev/null 2>&1; then
+        echo "Installing nvim plugins with vim-plug"
+        sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+elif command -v vim >/dev/null 2>&1; then
+        echo "Installing vim plugins with vim-plug"
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+fi
