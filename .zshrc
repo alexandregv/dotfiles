@@ -52,8 +52,18 @@ if type brew &>/dev/null; then
 	compinit
 fi
 
+
+# Completion
 fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
+fi
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit -i
+done
+compinit -C
+
 source "$ZSH/oh-my-zsh.sh"
 
 # Replaces os_icon with better colors
