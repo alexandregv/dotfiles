@@ -218,8 +218,8 @@ fi
 
 # tmux
 bindkey -r "^[a" # change "replace-and-hold to null
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
+if command -v tmux &> /dev/null && [ -z "$TMUX" ] && $(tmux ls -F '#{session_attached}' | (! grep -q '1')); then
+	tmux attach -t default || tmux new -s default
 fi
 
 if [ -e "$XDG_CONFIG_HOME/tmux/tmuxinator.zsh" ]; then
