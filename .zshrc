@@ -245,6 +245,19 @@ eval "$(direnv hook zsh)"
 # iTerm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# up (ultimate plumber)
+zle-upify() {
+    buf="$(echo "$BUFFER" | sed 's/[ |]*$//')"
+    tmp="$(mktemp)"
+    eval "$buf |& up --unsafe-full-throttle -o '$tmp' 2>/dev/null"
+    cmd="$(tail -n +2 "$tmp")"
+    rm -f "$tmp"
+    BUFFER="$BUFFER | $cmd"
+    zle end-of-line
+}
+zle -N zle-upify
+bindkey '^P' zle-upify
+
 # mcfly
 source "$HOME/.nix-profile/share/mcfly/mcfly.zsh"
 
