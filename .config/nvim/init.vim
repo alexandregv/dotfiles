@@ -17,6 +17,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'thaerkh/vim-workspace'
 Plug 'drewtempelmeyer/palenight.vim'
 " Plug 'arcticicestudio/nord-vim'
+" Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mattn/emmet-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'elixir-editors/vim-elixir'
