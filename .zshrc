@@ -46,15 +46,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # SSH agent
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# Homebrew completion
-if type brew &>/dev/null; then
-	FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-	autoload -Uz compinit
-	compinit
-fi
-
-
 # Completion
 fpath=(~/.zsh/completion $fpath)
 if type brew &>/dev/null; then
@@ -117,9 +108,6 @@ fi
 # Nix package manager
 if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
 export NIX_PAGER=cat
-
-# Init fasd, more here: https://github.com/clvv/fasd#install
-eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -260,6 +248,9 @@ fi
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# Init fasd, more here: https://github.com/clvv/fasd#install
+eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
 # iTerm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
