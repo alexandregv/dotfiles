@@ -273,6 +273,9 @@ bindkey '^P' zle-upify
 # mcfly
 source "$HOME/.nix-profile/share/mcfly/mcfly.zsh"
 
+# composer
+export PATH="$(composer global config bin-dir --absolute --quiet):$PATH"
+
 # enhanced rationalize-dot (expands .... to ../..)
 alias ..='cd ..'
 function rationalize-dot() {
