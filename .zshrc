@@ -39,6 +39,7 @@ plugins=(
   asdf
   zsh-completions
   jira
+  zsh-interactive-cd
 )
 
 # Path to your oh-my-zsh installation.
@@ -271,6 +272,22 @@ bindkey '^P' zle-upify
 
 # mcfly
 source "$HOME/.nix-profile/share/mcfly/mcfly.zsh"
+
+# enhanced rationalize-dot (expands .... to ../..)
+alias ..='cd ..'
+function rationalize-dot() {
+  if [[ $LBUFFER = '..' ]]; then
+    LBUFFER='cd ..'
+  fi
+
+  if [[ $LBUFFER = *.. ]]; then
+    LBUFFER+='/..'
+  else
+    LBUFFER+='.'
+  fi
+}
+zle -N rationalize-dot
+bindkey '.' rationalize-dot
 
 # keyboard
 setxkbmap -layout us -variant intl
