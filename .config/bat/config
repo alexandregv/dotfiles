@@ -24,5 +24,6 @@
 #--map-syntax "*.ino:C++"
 #--map-syntax ".ignore:Git Ignore"
 
---theme="ansi-dark"
+#--theme="ansi-dark"
+--theme="ansi"
 --style=numbers,changes,header,grid
