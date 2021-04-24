@@ -298,3 +298,6 @@ xmodmap ~/.Xmodmap || true
 
 # clean PATH
 export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
+
+# Scaleway CLI autocomplete initialization.
+eval "$(scw autocomplete script shell=zsh)"
