@@ -131,8 +131,8 @@ nnoremap <Esc><Esc> :w<CR>
 nnoremap <C-S> :w<CR>
 nnoremap <S-q> :q<CR>
 nnoremap <F5> :UndotreeToggle<CR>
-nnoremap <S-Up> :m .-2<CR>==
-nnoremap <S-Down> :m .+1<CR>==
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
 nnoremap <Tab> :tabnext<CR>
 nnoremap <S-Tab> :tabprev<CR>
 nnoremap <leader>s :ToggleWorkspace<CR>
@@ -160,29 +160,30 @@ nnoremap <C-Left> :TmuxNavigateLeft<CR>
 
 
 "-------------------------------- IJKL ARROWS ----------------------------------
-"map <A-o> <Up>
-"map <A-k> <Left>
-"map <A-l> <Down>
-"map <A-;> <Right>
-nnoremap <A-o> o
-nnoremap ø o
-nnoremap o <Up>
-nnoremap k <Left>
-nnoremap l <Down>
-nnoremap ; <Right>
-inoremap ø <Up>
-inoremap ˚ <Left>
-inoremap ¬ <Down>
-inoremap … <Right>
-"inoremap <A-o> <Up>
-"inoremap <A-k> <Left>
-"inoremap <A-l> <Down>
-"inoremap <A-;> <Right>
+" Normal mode
+nnoremap h <Left>
+nnoremap j <Down>
+nnoremap k <Up>
+nnoremap l <Right>
 
-vnoremap o <Up>
-vnoremap k <Left>
-vnoremap l <Down>
-vnoremap ; <Right>
+" Insert mode
+inoremap <A-h> <Left>
+inoremap <A-j> <Down>
+inoremap <A-k> <Up>
+inoremap <A-l> <Right>
+
+" Insert mode mac keyboard (Alt+hjkl)
+inoremap ˙ <Up>
+inoremap ∆ <Down>
+inoremap ˚ <Left>
+inoremap ¬ <Right>
+
+" Visual mode
+vnoremap h <Left>
+vnoremap j <Down>
+vnoremap k <Up>
+vnoremap l <Right>
+
 
 "-------------------------------- TOGGLE HYBRID NUMBERS ------------------------
 augroup numbertoggle
@@ -352,8 +353,8 @@ endfunction
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `j{char}{label}`
-nmap j <Plug>(easymotion-overwin-f)
+" `f{char}{label}`
+nmap f <Plug>(easymotion-overwin-f)
 
 let g:EasyMotion_smartcase = 1 " Turn on case-insensitive feature
 
