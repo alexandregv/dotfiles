@@ -204,3 +204,8 @@ smart_gaps on
 
 # bocal door
 bindsym $mod+d exec /usr/bin/bocaldoor.sh
+
+# luxafor
+bindsym $mod+XF86Tools exec $HOME/go/bin/luxafor-cli 0 255 0
+bindsym $mod+XF86Launch5 exec $HOME/go/bin/luxafor-cli 200 150 0
+bindsym $mod+XF86Launch6 exec $HOME/go/bin/luxafor-cli 255 0 0
