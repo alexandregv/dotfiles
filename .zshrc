@@ -300,6 +300,9 @@ bindkey '.' rationalize-dot
 setxkbmap -layout us -variant intl
 xmodmap ~/.Xmodmap || true
 
+# python3 binaries from asdf
+export PATH="$(asdf where python)/bin:$PATH"
+
 # clean PATH
 export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
 
