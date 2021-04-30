@@ -41,6 +41,9 @@ plugins=(
   jira
   zsh-interactive-cd
   packer
+  sudo
+  helm
+  minikube
 )
 
 # Path to your oh-my-zsh installation.
