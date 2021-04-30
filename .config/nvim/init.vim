@@ -159,7 +159,7 @@ nnoremap <C-Right> :TmuxNavigateRight<CR>
 nnoremap <C-Left> :TmuxNavigateLeft<CR>
 
 
-"-------------------------------- IJKL ARROWS ----------------------------------
+"-------------------------------- HJKL ARROWS ----------------------------------
 " Normal mode
 nnoremap h <Left>
 nnoremap j <Down>
@@ -183,6 +183,20 @@ vnoremap h <Left>
 vnoremap j <Down>
 vnoremap k <Up>
 vnoremap l <Right>
+
+" Disable arrows keys
+nnoremap <Left> <Nop>
+vnoremap <Left> <Nop>
+inoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+vnoremap <Right> <Nop>
+inoremap <Right> <Nop>
+nnoremap <Down> <Nop>
+vnoremap <Down> <Nop>
+inoremap <Down> <Nop>
+nnoremap <Up> <Nop>
+vnoremap <Up> <Nop>
+inoremap <Up> <Nop>
 
 
 "-------------------------------- TOGGLE HYBRID NUMBERS ------------------------
