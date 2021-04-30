@@ -6,12 +6,16 @@ echo "Updating the yadm repo origin URL"
 yadm remote set-url origin "git@github.com:alexandregv/dotfiles.git"
 
 if command -v nix-channel >/dev/null 2>&1; then
-        echo "Updating nix channels"
-        nix-channel --update
-        if (command -v nix-env >/dev/null 2>&1) && test -f ~/.Nixfile; then
-                echo "Installing nixpkgs with nix-env"
-                xargs -I% nix-env -f '<nixpkgs>' -iA % < ~/.Nixfile
-        fi
+  echo "Updating nix channels"
+  nix-channel --update
+  if (command -v nix-env >/dev/null 2>&1) && test -f ~/.Nixfile; then
+    echo "Installing nixpkgs with nix-env"
+    xargs -I% nix-env -f '<nixpkgs>' -iA % < ~/.Nixfile
+    if command -v nix-store >/dev/null 2>&1; then
+      nix-store --gc
+      nix-store --optimize
+    fi
+  fi
 fi
 
 if [ "$system_type" = "Darwin" ]; then
