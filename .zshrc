@@ -40,6 +40,7 @@ plugins=(
   zsh-completions
   jira
   zsh-interactive-cd
+  packer
 )
 
 # Path to your oh-my-zsh installation.
