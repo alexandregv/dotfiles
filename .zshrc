@@ -294,8 +294,10 @@ zle -N rationalize-dot
 bindkey '.' rationalize-dot
 
 # keyboard
-setxkbmap -layout us -variant intl
-xmodmap ~/.Xmodmap || true
+if xhost >& /dev/null; then
+  setxkbmap -layout us -variant intl
+  xmodmap ~/.Xmodmap || true
+fi
 
 # python3 binaries from asdf
 export PATH="$(asdf where python)/bin:$PATH"
