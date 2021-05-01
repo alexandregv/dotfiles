@@ -8,9 +8,6 @@
 #                          #
 ############################
 
-# exit if any error# exit if any error
-set -e
-
 at42=false
 
 export XDG_CONFIG_HOME="$HOME/.config"
