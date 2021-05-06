@@ -60,6 +60,8 @@ set tabstop=4
 set splitbelow
 set splitright
 "set colorcolumn=81
+set ignorecase
+set smartcase
 set wildignorecase
 colo delek
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
