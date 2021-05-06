@@ -198,12 +198,11 @@ alias vim='nvim'
 alias svim='nvim -u ~/.SpaceVim/vimrc'
 alias rcl='printf "\ec"'
 alias showall='tail -n+1 *'
-alias pyg='pygmentize -g'
 alias d='docker'
 alias dc='docker-compose'
 alias dm='docker-machine'
+alias k='kubectl'
 alias j='fasd_cd -d'
-alias gdc='gd --cached'
 alias scc="scc --sort code --no-complexity --no-cocomo"
 command -v norminette &>/dev/null || alias norminette='~/.norminette/norminette.rb'
 
