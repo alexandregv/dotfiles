@@ -1,0 +1,20 @@
+[pull]
+	rebase = true
+
+[branch]
+	autosetuprebase = always
+
+[core]
+    pager = delta
+
+[delta]
+    plus-color = "#012800"
+    minus-color = "#340001"
+    syntax-theme = Monokai Extended
+	features = line-numbers
+
+[interactive]
+    diffFilter = delta --color-only
+
+[init]
+	defaultBranch = master
