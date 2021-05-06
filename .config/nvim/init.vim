@@ -37,6 +37,7 @@ Plug 'vim-scripts/Align'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'wlemuel/vim-tldr'
+Plug 'AndrewRadev/switch.vim'
 call plug#end()
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
