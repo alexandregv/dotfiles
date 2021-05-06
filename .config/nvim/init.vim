@@ -38,6 +38,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'wlemuel/vim-tldr'
 Plug 'AndrewRadev/switch.vim'
+if has('nvim-0.5.0') " neovim 0.5.0+ required
+	Plug 'wfxr/minimap.vim'
+end
 call plug#end()
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
