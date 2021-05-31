@@ -306,6 +306,3 @@ export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV
 
 # Scaleway CLI autocomplete initialization.
 eval "$(scw autocomplete script shell=zsh)"
-
-# Use powerpill with yay (concurrent download)
-alias yay='yay --pacman powerpill'
