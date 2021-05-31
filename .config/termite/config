@@ -48,3 +48,6 @@ color18 = #444267
 color19 = #32374D
 color20 = #8796B0
 color21 = #959DCB
+
+[options]
+font = MesloLGM Nerd Font Mono 9
