@@ -390,6 +390,7 @@ map <Leader>B <Plug>(easymotion-B)
 "------------------------------- NORMINETTE VIM -----------------------------------
 " Enable norminette-vim (and gcc)
 let g:syntastic_c_checkers = ['norminette', 'gcc']
+let g:syntastic_python_checkers = []
 let g:syntastic_aggregate_errors = 1
 
 " Set the path to norminette (do no set if using norminette of 42 mac)
