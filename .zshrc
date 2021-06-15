@@ -193,6 +193,7 @@ alias gll='git --no-pager log --graph --decorate --oneline --pretty='\''%Cred%h%
 alias gs='git status -unormal'
 alias gsa='git status -uall'
 alias gcm='git commit -m'
+alias gtn='git tag -m $(svu next) $(svu next)'
 alias gww='gcc -Wall -Wextra -Werror'
 alias vim='nvim'
 alias svim='nvim -u ~/.SpaceVim/vimrc'
