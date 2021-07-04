@@ -235,6 +235,14 @@ function! MaximizeToggle()
 endfunction
 
 
+"---------------------- CENTERED CURSOR WHILE SCROLLING -----------------------
+augroup VCenterCursor
+  au!
+  au BufEnter,WinEnter,WinNew,VimResized *,*.*
+        \ let &scrolloff=winheight(win_getid())/2
+augroup END
+
+
 "-------------------------------- CLIPBOARD ------------------------------------
 " " Copy to clipboard
 vnoremap  <leader>y  "+y
