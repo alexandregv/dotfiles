@@ -1,4 +1,4 @@
-export DISLAY=":0.0"
+export DISPLAY=":0.0"
 if [ "$(hostname)" = "dump-reach" ]; then
   xrandr --output DP-2 --primary
   xrandr --output DP-4 --auto --left-of DP-2
