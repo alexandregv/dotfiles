@@ -159,10 +159,10 @@ let g:go_highlight_function_calls = 1
 
 "-------------------------------- TMUX ARROWS ----------------------------------
 let g:tmux_navigator_no_mappings = 1
-nnoremap <C-Down> :TmuxNavigateDown<CR>
-nnoremap <C-Up> :TmuxNavigateUp<CR>
-nnoremap <C-Right> :TmuxNavigateRight<CR>
-nnoremap <C-Left> :TmuxNavigateLeft<CR>
+nnoremap <M-Down> :TmuxNavigateDown<CR>
+nnoremap <M-Up> :TmuxNavigateUp<CR>
+nnoremap <M-Right> :TmuxNavigateRight<CR>
+nnoremap <M-Left> :TmuxNavigateLeft<CR>
 
 
 "-------------------------------- HJKL ARROWS ----------------------------------
