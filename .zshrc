@@ -271,8 +271,8 @@ zle-upify() {
 zle -N zle-upify
 bindkey '^P' zle-upify
 
-# mcfly
-source "$HOME/.nix-profile/share/mcfly/mcfly.zsh"
+# atuin (shell history)
+eval "$(atuin init zsh)"
 
 # composer
 export PATH="$(composer global config bin-dir --absolute --quiet):$PATH"
