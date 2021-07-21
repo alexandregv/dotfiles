@@ -6,7 +6,6 @@ Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'Lenovsky/nuake'
 Plug 'pandark/42header.vim', { 'for': ['c'] }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'itchyny/lightline.vim'
@@ -14,28 +13,19 @@ Plug 'brookhong/cscope.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'thaerkh/vim-workspace'
 "Plug 'drewtempelmeyer/palenight.vim'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'haml', 'eruby', 'css', 'scss', 'sass', 'postcss', 'jinja2'] }
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'edkolev/tmuxline.vim'
-Plug 'rbgrouleff/bclose.vim'
 Plug 'elixir-editors/vim-elixir', { 'for': ['elixir', 'mix'] }
 Plug 'mhinz/vim-mix-format', { 'for': ['elixir', 'mix'] }
 Plug 'francoiscabrol/ranger.vim'
 Plug 'junegunn/vim-easy-align'
-"Plug 'mxw/vim-jsx'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rizzatti/dash.vim'
 Plug 'jparise/vim-graphql', { 'for': ['graphql'] }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': ['go', 'gomod', 'gosum', 'godoc', 'gohtmltmpl', 'gotexttmpl'] }
 Plug 'easymotion/vim-easymotion'
-Plug 'vim-scripts/Align'
-" Plug 'itchyny/vim-gof'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'wlemuel/vim-tldr'
@@ -284,12 +274,6 @@ let g:syntastic_c_include_dirs = ['include', 'libft/include', '../include', '../
 "nnoremap <silent> <C-Left> <c-w>h
 "nnoremap <silent> <C-Up> <c-w>k
 "nnoremap <silent> <C-Down> <c-w>j
-
-
-"-------------------------------- NUAKE ----------------------------------------
-nnoremap <F4> :Nuake<CR>
-inoremap <F4> <C-\><C-n>:Nuake<CR>
-tnoremap <F4> <C-\><C-n>:Nuake<CR>
 
 
 "-------------------------------- CSCOPE ---------------------------------------
