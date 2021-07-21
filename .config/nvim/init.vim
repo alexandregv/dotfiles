@@ -34,7 +34,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'itchyny/lightline.vim'
 Plug 'glepnir/dashboard-nvim'
-Plug 'TimUntersberger/neogit'
 Plug 'wlemuel/vim-tldr'
 if has('nvim-0.5.0')
 	Plug 'wfxr/minimap.vim'
