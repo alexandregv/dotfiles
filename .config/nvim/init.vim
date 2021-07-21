@@ -5,6 +5,7 @@ Plug 'cacharle/c_formatter_42.vim'
 Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'Lenovsky/nuake'
 Plug 'pandark/42header.vim'
 Plug 'ekalinin/Dockerfile.vim'
@@ -15,9 +16,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thaerkh/vim-workspace'
-Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'drewtempelmeyer/palenight.vim'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'mattn/emmet-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'elixir-editors/vim-elixir'
@@ -83,8 +85,10 @@ set confirm
 
 "-------------------------------- PALENIGHT ------------------------------------
 set background=dark
-colorscheme palenight
+"colorscheme palenight
 " colorscheme nord
+colorscheme tokyonight
+let g:tokyonight_transparent = 1
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -329,7 +333,8 @@ nnoremap <leader>[ :Ranger<cr>
 
 
 "-------------------------------- LIGHTLINE-------------------------------------
-let g:lightline = {'colorscheme': 'darcula'}
+"let g:lightline = {'colorscheme': 'darcula'}
+let g:lightline = {'colorscheme': 'tokyonight'}
 set noshowmode
 
 
