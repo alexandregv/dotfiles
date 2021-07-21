@@ -375,7 +375,7 @@ function! Term_toggle(height)
 endfunction
 
 if has('nvim')
-	nnoremap <localleader>t :call Term_toggle(10)<cr>
+	nnoremap <localleader>t :call Term_toggle(7)<cr>
 	tnoremap <localleader>t <C-\><C-n>:call Term_toggle(10)<cr>
 endif
 
