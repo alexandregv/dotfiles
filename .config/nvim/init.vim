@@ -1,48 +1,63 @@
 call plug#begin('~/.vim/plugged')
+
+" --- Libraries
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
+
+" --- Syntax and edition
 Plug 'vim-syntastic/syntastic'
-Plug 'alexandregv/norminette-vim', { 'for': ['c'] }
-Plug 'cacharle/c_formatter_42.vim', { 'for': ['c'] }
-Plug 'scrooloose/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'pandark/42header.vim', { 'for': ['c'] }
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'itchyny/lightline.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'jparise/vim-graphql', { 'for': ['graphql'] }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': ['go', 'gomod', 'gosum', 'godoc', 'gohtmltmpl', 'gotexttmpl'] }
+Plug 'elixir-editors/vim-elixir', { 'for': ['elixir', 'mix'] }
+Plug 'mhinz/vim-mix-format', { 'for': ['elixir', 'mix'] }
+Plug 'AndrewRadev/switch.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'brookhong/cscope.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree'
-"Plug 'drewtempelmeyer/palenight.vim'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'haml', 'eruby', 'css', 'scss', 'sass', 'postcss', 'jinja2'] }
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'elixir-editors/vim-elixir', { 'for': ['elixir', 'mix'] }
-Plug 'mhinz/vim-mix-format', { 'for': ['elixir', 'mix'] }
-Plug 'francoiscabrol/ranger.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'jparise/vim-graphql', { 'for': ['graphql'] }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': ['go', 'gomod', 'gosum', 'godoc', 'gohtmltmpl', 'gotexttmpl'] }
-Plug 'easymotion/vim-easymotion'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'wlemuel/vim-tldr'
-Plug 'AndrewRadev/switch.vim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'glepnir/dashboard-nvim'
-"Plug 'romgrk/barbar.nvim'
-"Plug 'akinsho/nvim-bufferline.lua'
-Plug 'TimUntersberger/neogit'
-if has('nvim-0.5.0') " neovim 0.5.0+ required
-	Plug 'wfxr/minimap.vim'
+if has('nvim-0.5.0')
 	Plug 'neovim/nvim-lspconfig'
-	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-	Plug 'lewis6991/gitsigns.nvim'
 end
+
+" --- 42 School
+Plug 'alexandregv/norminette-vim', { 'for': ['c'] }
+Plug 'cacharle/c_formatter_42.vim', { 'for': ['c'] }
+Plug 'pandark/42header.vim', { 'for': ['c'] }
+
+" --- Editor
+Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'itchyny/lightline.vim'
+Plug 'glepnir/dashboard-nvim'
+Plug 'TimUntersberger/neogit'
+Plug 'wlemuel/vim-tldr'
+if has('nvim-0.5.0')
+	Plug 'wfxr/minimap.vim'
+	Plug 'lewis6991/gitsigns.nvim'
+	"Plug 'romgrk/barbar.nvim'
+	"Plug 'akinsho/nvim-bufferline.lua'
+end
+
+" --- Navigation
+Plug 'scrooloose/nerdtree'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'easymotion/vim-easymotion'
+if has('nvim-0.5.0')
+	Plug 'nvim-telescope/telescope.nvim'
+end
+
+" --- Theme
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+"Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'arcticicestudio/nord-vim'
+"Plug 'dracula/vim', { 'as': 'dracula' }
+
 call plug#end()
 
 lua << EOF
