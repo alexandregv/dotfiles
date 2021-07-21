@@ -30,10 +30,25 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'wlemuel/vim-tldr'
 Plug 'AndrewRadev/switch.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'glepnir/dashboard-nvim'
+"Plug 'romgrk/barbar.nvim'
+"Plug 'akinsho/nvim-bufferline.lua'
+Plug 'TimUntersberger/neogit'
 if has('nvim-0.5.0') " neovim 0.5.0+ required
 	Plug 'wfxr/minimap.vim'
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+	Plug 'lewis6991/gitsigns.nvim'
 end
 call plug#end()
+
+lua << EOF
+require('gitsigns').setup()
+-- require("bufferline").setup{}
+EOF
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -72,6 +87,7 @@ let g:workspace_session_directory = $HOME . '/.vim/sessions/'
 let g:workspace_undodir=$HOME . '/.vim/undodir'
 set nofixendofline
 set confirm
+let g:minimap_auto_start = 1
 
 "-------------------------------- PALENIGHT ------------------------------------
 set background=dark
