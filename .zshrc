@@ -19,7 +19,6 @@ if [[ "$TERM" == xterm* ]]; then
 fi
 POWERLEVEL9K_MODE="nerdfont-complete"
 ZSH_THEME=powerlevel10k/powerlevel10k # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#ZSH_THEME="dracula"
 
 plugins=(
   git
@@ -165,20 +164,6 @@ fi
 
 # cd then ls
 function cd() { builtin cd "$*" && ls; }
-
-# 42School: retry
-#retry()
-#{
-#  url=$(git remote get-url origin)
-#  nb=${url: -1}
-#  if ! [[ $nb =~ '^[0-9]+$' ]]; then
-#	  git remote set-url origin $url"2"
-#  else
-#	  url=$(echo $url | rev | cut -c 2- | rev)
-#	  git remote set-url origin $url$((nb+1))
-#  fi
-#  echo "New remote URL: $(git remote get-url origin)\n(lol u retried, u noob)"
-#}
 
 # docker
 undock() { eval "$(docker-machine env -u)"; }
