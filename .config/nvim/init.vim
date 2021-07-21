@@ -1,13 +1,13 @@
 call plug#begin('~/.vim/plugged')
 Plug 'vim-syntastic/syntastic'
-Plug 'alexandregv/norminette-vim'
-Plug 'cacharle/c_formatter_42.vim'
+Plug 'alexandregv/norminette-vim', { 'for': ['c'] }
+Plug 'cacharle/c_formatter_42.vim', { 'for': ['c'] }
 Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'Lenovsky/nuake'
-Plug 'pandark/42header.vim'
+Plug 'pandark/42header.vim', { 'for': ['c'] }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'brookhong/cscope.vim'
@@ -20,19 +20,19 @@ Plug 'thaerkh/vim-workspace'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'haml', 'eruby', 'css', 'scss', 'sass', 'postcss', 'jinja2'] }
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'elixir-editors/vim-elixir'
-Plug 'mhinz/vim-mix-format'
 Plug 'edkolev/tmuxline.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'elixir-editors/vim-elixir', { 'for': ['elixir', 'mix'] }
+Plug 'mhinz/vim-mix-format', { 'for': ['elixir', 'mix'] }
 Plug 'francoiscabrol/ranger.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'jparise/vim-graphql'
 "Plug 'mxw/vim-jsx'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
+Plug 'jparise/vim-graphql', { 'for': ['graphql'] }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': ['go', 'gomod', 'gosum', 'godoc', 'gohtmltmpl', 'gotexttmpl'] }
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/Align'
 " Plug 'itchyny/vim-gof'
