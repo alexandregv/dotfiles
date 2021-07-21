@@ -60,18 +60,42 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 call plug#end()
 
+
+"---------------------------------- LUA PLUGINS --------------------------------
 lua << EOF
 require('gitsigns').setup()
 -- require("bufferline").setup{}
 EOF
 
+
+"---------------------------------- EASY ALIGN ---------------------------------
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
-
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+
+"----------------------------- COLORSCHEME / THEME -----------------------------
+set termguicolors
+set background=dark
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+colorscheme tokyonight
+let g:tokyonight_style = 'storm'
+let g:tokyonight_transparent = 1
+let g:lightline = {'colorscheme': 'tokyonight'}
+
+"colorscheme palenight
+"let g:palenight_terminal_italics=1
+"let g:lightline = {'colorscheme': 'palenight'}
+
+"colorscheme nord
+
+"colorscheme dracula
+
+
 "-------------------------------- MISC CONFIG ----------------------------------
+set noshowmode
 set linebreak
 set nowrap
 set ruler
@@ -79,7 +103,6 @@ set number
 syntax on
 set noswapfile
 set mouse=a
-
 set nrformats+=alpha
 set shiftwidth=4
 set tabstop=4
@@ -89,7 +112,6 @@ set splitright
 set ignorecase
 set smartcase
 set wildignorecase
-colo delek
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 set path +=libft/include
 set path +=./libft/include
@@ -103,29 +125,36 @@ let g:workspace_undodir=$HOME . '/.vim/undodir'
 set nofixendofline
 set confirm
 let g:minimap_auto_start = 1
+let g:dashboard_default_executive ='telescope'
+autocmd FileType * RainbowParentheses
 
-"-------------------------------- PALENIGHT ------------------------------------
-set background=dark
-"colorscheme palenight
-" colorscheme nord
-colorscheme tokyonight
-let g:tokyonight_transparent = 1
+"-------------------------------- MISC MAPPINGS --------------------------------
+iabbrev mainc int		main(int argc, char **argv)<cr>{<cr><esc>
+noremap <leader>h :noh<CR>
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>sv :windo so $MYVIMRC<CR>
+nnoremap <Esc><Esc> :w<CR>
+nnoremap <C-S> :w<CR>
+nnoremap <S-q> :q<CR>
+nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
+nnoremap <Tab> :tabnext<CR>
+nnoremap <S-Tab> :tabprev<CR>
+nnoremap <leader>s :ToggleWorkspace<CR>
+" inoremap { {<CR>}<esc>O
+"inoremap ( ()<Left>
+"inoremap [ []<Left>
+tnoremap <Esc> <C-\><C-n>
+noremap ' ci'
+noremap " ci"
 
-if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
 
-"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-if (has("termguicolors"))
-  set termguicolors
-endif
-
-" Italics for my favorite color scheme
-let g:palenight_terminal_italics=1
-
+"-------------------------------- ARROWS SPLITS --------------------------------
+nnoremap <leader><Right> :call VsRight()<CR>
+nnoremap <leader><Left> :call VsLeft()<CR>
+nnoremap <leader><Up> :call SpUp()<CR>
+nnoremap <leader><Down> :call SpDown()<CR>
 
 function! VsRight()
 	set splitright
@@ -149,38 +178,6 @@ function! SpDown()
 	exec "sp"
 endfunction
 
-"-------------------------------- MISC MAPPINGS --------------------------------
-iabbrev mainc int		main(int argc, char **argv)<cr>{<cr><esc>
-noremap <leader>h :noh<CR>
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <leader><Right> :call VsRight()<CR>
-nnoremap <leader><Left> :call VsLeft()<CR>
-nnoremap <leader><Up> :call SpUp()<CR>
-nnoremap <leader><Down> :call SpDown()<CR>
-nnoremap <leader>sv :windo so $MYVIMRC<CR>
-nnoremap <Esc><Esc> :w<CR>
-nnoremap <C-S> :w<CR>
-nnoremap <S-q> :q<CR>
-nnoremap <F5> :UndotreeToggle<CR>
-nnoremap <S-j> :m .+1<CR>==
-nnoremap <S-k> :m .-2<CR>==
-nnoremap <Tab> :tabnext<CR>
-nnoremap <S-Tab> :tabprev<CR>
-nnoremap <leader>s :ToggleWorkspace<CR>
-" inoremap { {<CR>}<esc>O
-"inoremap ( ()<Left>
-"inoremap [ []<Left>
-tnoremap <Esc> <C-\><C-n>
-noremap ' ci'
-noremap " ci"
-
-"-------------------------------- VIM-GO ----------------------------------
-let g:go_highlight_types = 1 " Highlight types
-let g:go_fmt_command = "goimports" " Run goimports (+ fmt) on save
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-" Mappings: see ~/.config/nvim/ftplugin/go_mappings.vim
 
 "-------------------------------- TMUX ARROWS ----------------------------------
 let g:tmux_navigator_no_mappings = 1
@@ -269,17 +266,26 @@ augroup END
 
 
 "-------------------------------- CLIPBOARD ------------------------------------
-" " Copy to clipboard
+" Copy to clipboard
 vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+yg_
 nnoremap  <leader>y  "+y
 nnoremap  <leader>yy  "+yy
 
-" " Paste from clipboard
+" Paste from clipboard
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+
+
+"-------------------------------- VIM-GO ----------------------------------
+let g:go_highlight_types = 1 " Highlight types
+let g:go_fmt_command = "goimports" " Run goimports (+ fmt) on save
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+" Mappings: see ~/.config/nvim/ftplugin/go_mappings.vim
 
 
 "-------------------------------- SYNTASTIC ------------------------------------
@@ -347,12 +353,6 @@ let g:ranger_map_keys = 0
 nnoremap <leader>[ :Ranger<cr>
 
 
-"-------------------------------- LIGHTLINE-------------------------------------
-"let g:lightline = {'colorscheme': 'darcula'}
-let g:lightline = {'colorscheme': 'tokyonight'}
-set noshowmode
-
-
 "-------------------------------- NVIM TERM ------------------------------------
 let g:term_buf = 0
 let g:term_win = 0
@@ -386,6 +386,7 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
+
 "--------------------------- COLOR COLUMN TOGGLE -------------------------------
 nnoremap <leader>c :call ColorColumnToggle()<cr>
 
@@ -396,6 +397,7 @@ function! ColorColumnToggle()
         setlocal colorcolumn=81
     endif
 endfunction
+
 
 "------------------------------- EASY MOTION -----------------------------------
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -414,6 +416,7 @@ map <Leader>W <Plug>(easymotion-W)
 map <Leader>b <Plug>(easymotion-b)
 map <Leader>bb <Plug>(easymotion-b)
 map <Leader>B <Plug>(easymotion-B)
+
 
 "------------------------------- NORMINETTE VIM -----------------------------------
 " Enable norminette-vim (and gcc)
