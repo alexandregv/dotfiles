@@ -92,6 +92,7 @@ POWERLEVEL9K_SUDO_ICON="\uf09c"
 export LANG="en_US.utf8"
 export LC_ALL="en_US.utf8"
 export LC_COLLATE=C #sort by ASCII
+export EDITOR='nvim'
 export MYVIMRC="$HOME/.config/nvim/init.vim"
 export MYZSHRC="$HOME/.zshrc"
 export MYTMUXCONF="$HOME/.config/tmux/tmux.conf"
@@ -110,13 +111,6 @@ fi
 # Nix package manager
 if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
 export NIX_PAGER=cat
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='vim'
-else
-	export EDITOR='nvim'
-fi
 
 # PATH
 export PATH="$HOME/.local/bin:$PATH"
