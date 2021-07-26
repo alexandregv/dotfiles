@@ -111,6 +111,7 @@ fi
 # Nix package manager
 if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
 export NIX_PAGER=cat
+export LOCALE_ARCHIVE=`nix-env --installed --no-name --out-path --query glibc-locales`/lib/locale/locale-archive
 
 # PATH
 export PATH="$HOME/.local/bin:$PATH"
