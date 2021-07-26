@@ -1,5 +1,6 @@
 ansible
 aria2
+atuin
 aws
 bat
 bc
@@ -11,9 +12,12 @@ diskonaut
 dmidecode
 docker
 feh
+firefox
 fpp
+fuse
 fzf
 git-extras
+glibc-locales
 glow
 gnome-shell-extension-appindicator
 gnupg
@@ -39,6 +43,7 @@ ncurses
 net-tools
 ngrok
 pipes
+playerctl
 postman
 procs
 pueue
@@ -54,6 +59,7 @@ shellcheck
 signal-desktop
 slack
 spectacle
+svu
 termite
 tldr
 tmsu
