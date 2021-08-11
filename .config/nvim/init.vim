@@ -96,6 +96,7 @@ let g:lightline = {'colorscheme': 'tokyonight'}
 "-------------------------------- MISC CONFIG ----------------------------------
 set noshowmode
 set linebreak
+set cursorline
 set nowrap
 set ruler
 set number
