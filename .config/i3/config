@@ -279,3 +279,14 @@ client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
+
+# Startup applications
+exec --no-startup-id i3-msg 'workspace 1; exec /home/reach/.nix-profile/bin/termite'
+exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/discord-canary'
+exec --no-startup-id i3-msg 'workspace 10; exec /home/reach/.nix-profile/bin/slack'
+
+# Default position for applications
+assign [class="firefox"] $ws2
+assign [class="slack"] $ws10
+assign [class="discord"] $ws10
