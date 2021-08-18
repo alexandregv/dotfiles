@@ -287,3 +287,6 @@ export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV
 
 # Scaleway CLI autocomplete initialization.
 eval "$(scw autocomplete script shell=zsh)"
+
+# krew (kuebctl / k8s plugins manager)
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
