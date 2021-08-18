@@ -281,10 +281,10 @@ client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 
 # Startup applications
-exec --no-startup-id i3-msg 'workspace 1; exec /home/reach/.nix-profile/bin/termite'
-exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/discord-canary'
-exec --no-startup-id i3-msg 'workspace 10; exec /home/reach/.nix-profile/bin/slack'
+exec --no-startup-id i3-msg 'workspace 1; exec termite'
+exec --no-startup-id i3-msg 'workspace 2; exec firefox'
+exec --no-startup-id i3-msg 'workspace 10; exec discord-canary'
+exec --no-startup-id i3-msg 'workspace 10; exec slack'
 
 # Default position for applications
 assign [class="firefox"] $ws2
