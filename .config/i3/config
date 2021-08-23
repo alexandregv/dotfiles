@@ -213,7 +213,7 @@ for_window [class="Discord"] border none
 for_window [class="Apache Directory Studio" title="Properties for Quick Search "] floating enable, resize set 1200 700, move position center
 
 # lock screen
-bindsym $mod+l exec gllock
+bindsym $mod+Escape exec gllock
 
 # gaps
 gaps inner 6
