@@ -118,6 +118,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $primary_monitor DP-2
+set $secondary_monitor DP-4
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -279,6 +282,10 @@ client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
+
+workspace $ws1 output $primary_monitor
+workspace $ws2 output $primary_monitor
+workspace $ws10 output $secondary_monitor
 
 # Startup applications
 exec --no-startup-id i3-msg 'workspace 2; exec termite'
