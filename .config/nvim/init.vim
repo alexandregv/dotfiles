@@ -117,6 +117,7 @@ set path +=libft/include
 set path +=./libft/include
 set path +=../libft/include
 command! W :w
+command! Wsudo :w !sudo tee %
 set list
 set listchars=tab:\ \ ,trail:␣
 syn keyword cTodo DEBUG
