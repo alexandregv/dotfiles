@@ -253,7 +253,9 @@ zle -N zle-upify
 bindkey '^P' zle-upify
 
 # atuin (shell history)
+export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
+bindkey '^r' _atuin_search_widget
 
 # composer
 export PATH="$(composer global config bin-dir --absolute --quiet):$PATH"
