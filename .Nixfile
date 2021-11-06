@@ -18,9 +18,9 @@ fpp
 fuse
 fzf
 git-extras
-glibc-locales
+glibcLocales
 glow
-gnome-shell-extension-appindicator
+gnomeExtensions.appindicator
 gnupg
 htop
 hub
@@ -41,7 +41,7 @@ mkpasswd
 mmv
 ncdu
 ncurses
-net-tools
+nettools
 ngrok
 pipes
 playerctl
@@ -49,7 +49,6 @@ postman
 procs
 pueue
 pv
-python3.8-yubikey-manager
 ranger
 remmina
 rlwrap
@@ -60,7 +59,6 @@ shellcheck
 signal-desktop
 slack
 spectacle
-svu
 termite
 tldr
 tmsu
@@ -74,9 +72,10 @@ urlview
 vlc
 wget
 xdotool
-xsel-unstable
+xsel
 xsv
 yq
+yubikey-manager
 yubikey-manager-qt
 yubikey-personalization
 yubikey-personalization-gui
