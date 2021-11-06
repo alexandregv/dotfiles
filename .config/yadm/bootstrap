@@ -40,3 +40,10 @@ elif command -v vim >/dev/null 2>&1; then
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
         vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
 fi
+
+if command -v zoxide >/dev/null 2>&1; then
+        echo "Installing zoxide plugins"
+		mkdir -p ~/.config/xplr/plugins
+		git clone https://github.com/sayanarijit/zoxide.xplr ~/.config/xplr/plugins/zoxide 2>/dev/null ;:
+		(cd ~/.config/xplr/plugins/zoxide && git pull)
+fi
