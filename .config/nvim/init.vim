@@ -49,9 +49,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'nanotee/zoxide.vim'
 Plug 'sayanarijit/xplr.vim'
 if has('nvim-0.5.0')
 	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'jvgrootveld/telescope-zoxide'
 end
 
 " --- Theme
