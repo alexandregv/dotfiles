@@ -26,7 +26,6 @@ plugins=(
   docker
   aws
   heroku
-  fasd
   catimg
   archlinux
   #battery
@@ -234,8 +233,8 @@ fi
 # direnv
 eval "$(direnv hook zsh)"
 
-# Init fasd, more here: https://github.com/clvv/fasd#install
-eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
+# zoxide
+eval "$(zoxide init zsh --cmd j)"
 
 # iTerm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
