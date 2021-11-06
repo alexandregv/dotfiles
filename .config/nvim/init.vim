@@ -19,6 +19,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'haml', 'eruby', 'css', 'scss', 'sass', 'postcss', 'jinja2'] }
+Plug 'github/copilot.vim'
 if has('nvim-0.5.0')
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
@@ -45,8 +46,10 @@ end
 " --- Navigation
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'sayanarijit/xplr.vim'
 if has('nvim-0.5.0')
 	Plug 'nvim-telescope/telescope.nvim'
 end
@@ -57,6 +60,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 "Plug 'arcticicestudio/nord-vim'
 "Plug 'dracula/vim', { 'as': 'dracula' }
 
+Plug 'tpope/vim-obsession'
 call plug#end()
 
 
