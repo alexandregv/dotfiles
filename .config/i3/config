@@ -297,3 +297,4 @@ exec --no-startup-id i3-msg 'workspace 10; exec slack'
 assign [class="firefox"] $ws1
 assign [class="slack"] $ws10
 assign [class="discord"] $ws10
+assign [class="vmrc"] $ws10
