@@ -183,9 +183,11 @@ alias d='docker'
 alias dc='docker-compose'
 alias dm='docker-machine'
 alias k='kubectl'
-alias j='fasd_cd -d'
 alias scc="scc --sort code --no-complexity --no-cocomo"
 command -v norminette &>/dev/null || alias norminette='~/.norminette/norminette.rb'
+
+# delete word backward with Ctrl+Delete
+bindkey '^H' backward-kill-word
 
 unalias gcl;
 function gcl() {
