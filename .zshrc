@@ -278,7 +278,7 @@ bindkey '.' rationalize-dot
 
 # keyboard
 if xhost >& /dev/null; then
-  setxkbmap -layout us -variant intl
+  setxkbmap -layout us -variant altgr-intl
   xmodmap ~/.Xmodmap || true
 fi
 
