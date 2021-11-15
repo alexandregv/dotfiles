@@ -439,7 +439,7 @@ let g:c_syntax_for_h = 1
 let g:syntastic_c_include_dirs = ['.', '..', 'include', '../include', '../../include', 'libft', 'libft/include', '../libft', '../libft/include', '../../libft', '../../libft/include']
 
 " Pass custom arguments to norminette (this one ignores 42header)
-let g:syntastic_c_norminette_args = '-R CheckTopCommentHeader'
+" let g:syntastic_c_norminette_args = '-R CheckTopCommentHeader'
 
 " Check errors when opening a file (disable to speed up startup time)
 let g:syntastic_check_on_open = 1
