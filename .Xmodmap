@@ -7,10 +7,12 @@ add Lock = Caps_Lock
 add Mod1 = Alt_L
 
 keycode 27 = r R egrave Egrave egrave Egrave
-keycode 28 = t T ediaeresis Ediaeresis ediaeresis Ediaeresis
+keycode 28 = t T ecircumflex Ecircumflex ecircumflex Ecircumflex
+keycode 29 = y Y ucircumflex Ucircumflex ucircumflex Ucircumflex
+keycode 30 = u U ugrave Ugrave ugrave Ugrave
 keycode 31 = i I icircumflex Icircumflex icircumflex Icircumflex
 keycode 32 = o O ocircumflex Ocircumflex ocircumflex Ocircumflex
 keycode 38 = a A agrave Agrave agrave Agrave
-keycode 39 = s S aacute Aacute aacute Aacute
+keycode 39 = s S acircumflex Acircumflex acircumflex Acircumflex
 ! keycode 49 = dead_grave asciitilde
 keycode 66 = aacute
